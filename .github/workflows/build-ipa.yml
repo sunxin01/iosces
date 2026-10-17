@@ -1,0 +1,134 @@
+name: Build iOS IPA (unsigned)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  SCHEME: ShiGuang
+  PROJECT_DIR: .
+  CONFIGURATION: Release
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer || \
+          sudo xcode-select -s /Applications/Xcode_15.app/Contents/Developer || \
+          sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+          xcodebuild -version
+
+      - name: Verify project layout
+        run: |
+          pwd
+          ls -la
+          echo "---"
+          echo "PROJECT_DIR=${{ env.PROJECT_DIR }}"
+          ls -la "${{ env.PROJECT_DIR }}"
+          [ -d "${{ env.PROJECT_DIR }}/${{ env.SCHEME }}.xcodeproj" ] || { echo "ERROR: .xcodeproj not found in PROJECT_DIR"; exit 1; }
+          [ -f "${{ env.PROJECT_DIR }}/${{ env.SCHEME }}.xcodeproj/project.pbxproj" ] || { echo "ERROR: project.pbxproj missing"; exit 1; }
+          echo "Project layout OK"
+
+      - name: Show available schemes
+        run: |
+          cd "${{ env.PROJECT_DIR }}"
+          xcodebuild -list -project "${{ env.SCHEME }}.xcodeproj"
+
+      - name: Archive (no codesign)
+        run: |
+          set -e
+          cd "${{ env.PROJECT_DIR }}"
+          ARCHIVE_PATH="$RUNNER_TEMP/${{ env.SCHEME }}.xcarchive"
+          LOG="$RUNNER_TEMP/xcodebuild-archive.log"
+          set +e
+          xcodebuild archive \
+            -project "${{ env.SCHEME }}.xcodeproj" \
+            -scheme "${{ env.SCHEME }}" \
+            -configuration "${{ env.CONFIGURATION }}" \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$ARCHIVE_PATH" \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData" \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGN_ENTITLEMENTS="" \
+            ENABLE_BITCODE=NO 2>&1 | tee "$LOG"
+          RC=${PIPESTATUS[0]}
+          set -e
+          if [ "$RC" -ne 0 ]; then
+            echo "=== xcodebuild failed (rc=$RC). Key errors: ==="
+            grep -nE "error:|fatal error|Command .* failed" "$LOG" | head -40 || true
+            echo "=== last 120 lines ==="
+            tail -120 "$LOG"
+            exit "$RC"
+          fi
+          echo "Archive succeeded at: $ARCHIVE_PATH"
+
+      - name: Verify .app exists
+        run: |
+          APP_PATH="$RUNNER_TEMP/${{ env.SCHEME }}.xcarchive/Products/Applications/${{ env.SCHEME }}.app"
+          if [ ! -d "$APP_PATH" ]; then
+            echo "ERROR: .app not found at $APP_PATH"
+            echo "=== archive tree ==="
+            ls -R "$RUNNER_TEMP/${{ env.SCHEME }}.xcarchive" || true
+            exit 1
+          fi
+          echo "App bundle: $APP_PATH"
+          ls -la "$APP_PATH"
+
+      - name: Package unsigned IPA
+        run: |
+          set -e
+          STAGE="$RUNNER_TEMP/ipa-stage"
+          APP_PATH="$RUNNER_TEMP/${{ env.SCHEME }}.xcarchive/Products/Applications/${{ env.SCHEME }}.app"
+          mkdir -p "$STAGE/Payload"
+          cp -R "$APP_PATH" "$STAGE/Payload/"
+          rm -rf "$STAGE/Payload/${{ env.SCHEME }}.app/_CodeSignature"
+          rm -f  "$STAGE/Payload/${{ env.SCHEME }}.app/embedded.mobileprovision"
+          cd "$STAGE"
+          zip -qry "${{ env.SCHEME }}-unsigned.ipa" Payload
+          ls -lh "${{ env.SCHEME }}-unsigned.ipa"
+          shasum -a 256 "${{ env.SCHEME }}-unsigned.ipa" | awk '{print $1}' > "${{ env.SCHEME }}-unsigned.ipa.sha256"
+          cat "${{ env.SCHEME }}-unsigned.ipa.sha256"
+
+      - name: Write build manifest
+        run: |
+          STAGE="$RUNNER_TEMP/ipa-stage"
+          {
+            echo "App: ${{ env.SCHEME }}"
+            echo "Version: 1.0.0 (1)"
+            echo "BundleID: com.shiguang.timeline"
+            echo "Configuration: ${{ env.CONFIGURATION }}"
+            echo "Commit: ${{ github.sha }}"
+            echo "Run: ${{ github.run_id }}"
+            echo "Date: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "SHA-256: $(cat $STAGE/${{ env.SCHEME }}-unsigned.ipa.sha256)"
+          } > "$STAGE/build-manifest.txt"
+          cat "$STAGE/build-manifest.txt"
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SCHEME }}-unsigned-ipa
+          path: |
+            ${{ runner.temp }}/ipa-stage/${{ env.SCHEME }}-unsigned.ipa
+            ${{ runner.temp }}/ipa-stage/${{ env.SCHEME }}-unsigned.ipa.sha256
+            ${{ runner.temp }}/ipa-stage/build-manifest.txt
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Upload build logs (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SCHEME }}-build-logs
+          path: |
+            ${{ runner.temp }}/*.log
+            ${{ runner.temp }}/DerivedData/Logs/**
+          if-no-files-found: ignore

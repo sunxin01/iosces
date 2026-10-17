@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		502B00000000000000000001 /* ShiGuangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C00000000000000000001 /* ShiGuangApp.swift */; };
+		502B00000000000000000002 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C00000000000000000002 /* Mood.swift */; };
+		502B00000000000000000003 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C00000000000000000003 /* Moment.swift */; };
+		502B00000000000000000004 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C00000000000000000004 /* DateHelpers.swift */; };
+		502B00000000000000000005 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C00000000000000000005 /* ImageStore.swift */; };
+		502B00000000000000000006 /* MomentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C00000000000000000006 /* MomentStore.swift */; };
+		502B00000000000000000007 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C00000000000000000007 /* Theme.swift */; };
+		502B00000000000000000008 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C00000000000000000008 /* RootView.swift */; };
+		502B00000000000000000009 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C00000000000000000009 /* TimelineView.swift */; };
+		502B0000000000000000000A /* AddMomentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C0000000000000000000A /* AddMomentView.swift */; };
+		502B0000000000000000000B /* MomentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C0000000000000000000B /* MomentDetailView.swift */; };
+		502B0000000000000000000C /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C0000000000000000000C /* StatsView.swift */; };
+		502B0000000000000000000D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C0000000000000000000D /* ProfileView.swift */; };
+		502B0000000000000000000E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503C0000000000000000000E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		503C00000000000000000001 /* ShiGuangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiGuangApp.swift; sourceTree = "<group>"; };
+		503C00000000000000000002 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		503C00000000000000000003 /* Moment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
+		503C00000000000000000004 /* DateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
+		503C00000000000000000005 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		503C00000000000000000006 /* MomentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentStore.swift; sourceTree = "<group>"; };
+		503C00000000000000000007 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		503C00000000000000000008 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		503C00000000000000000009 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		503C0000000000000000000A /* AddMomentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMomentView.swift; sourceTree = "<group>"; };
+		503C0000000000000000000B /* MomentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetailView.swift; sourceTree = "<group>"; };
+		503C0000000000000000000C /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		503C0000000000000000000D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		503C0000000000000000000E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		503C0000000000000000000F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504D00000000000000000001 /* ShiGuang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShiGuang.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		505E00000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		506F00000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				506F00000000000000000002 /* ShiGuang */,
+				506F00000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		506F00000000000000000002 /* ShiGuang */ = {
+			isa = PBXGroup;
+			children = (
+				503C00000000000000000001 /* ShiGuangApp.swift */,
+				506F00000000000000000004 /* Models */,
+				506F00000000000000000005 /* ViewModels */,
+				506F00000000000000000006 /* Views */,
+				503C0000000000000000000E /* Assets.xcassets */,
+				503C0000000000000000000F /* Info.plist */,
+			);
+			path = ShiGuang;
+			sourceTree = "<group>";
+		};
+		506F00000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				504D00000000000000000001 /* ShiGuang.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		506F00000000000000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				503C00000000000000000002 /* Mood.swift */,
+				503C00000000000000000003 /* Moment.swift */,
+				503C00000000000000000004 /* DateHelpers.swift */,
+				503C00000000000000000005 /* ImageStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		506F00000000000000000005 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				503C00000000000000000006 /* MomentStore.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		506F00000000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				503C00000000000000000007 /* Theme.swift */,
+				503C00000000000000000008 /* RootView.swift */,
+				503C00000000000000000009 /* TimelineView.swift */,
+				503C0000000000000000000A /* AddMomentView.swift */,
+				503C0000000000000000000B /* MomentDetailView.swift */,
+				503C0000000000000000000C /* StatsView.swift */,
+				503C0000000000000000000D /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		501A00000000000000000001 /* ShiGuang */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507A00000000000000000001 /* Build configuration list for PBXNativeTarget "ShiGuang" */;
+			buildPhases = (
+				508B00000000000000000001 /* Sources */,
+				505E00000000000000000001 /* Frameworks */,
+				509C00000000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShiGuang;
+			productName = ShiGuang;
+			productReference = 504D00000000000000000001 /* ShiGuang.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		500A00000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					501A00000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 507A00000000000000000002 /* Build configuration list for PBXProject "ShiGuang" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 506F00000000000000000001;
+			productRefGroup = 506F00000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				501A00000000000000000001 /* ShiGuang */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		509C00000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502B0000000000000000000E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		508B00000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502B00000000000000000001 /* ShiGuangApp.swift in Sources */,
+				502B00000000000000000002 /* Mood.swift in Sources */,
+				502B00000000000000000003 /* Moment.swift in Sources */,
+				502B00000000000000000004 /* DateHelpers.swift in Sources */,
+				502B00000000000000000005 /* ImageStore.swift in Sources */,
+				502B00000000000000000006 /* MomentStore.swift in Sources */,
+				502B00000000000000000007 /* Theme.swift in Sources */,
+				502B00000000000000000008 /* RootView.swift in Sources */,
+				502B00000000000000000009 /* TimelineView.swift in Sources */,
+				502B0000000000000000000A /* AddMomentView.swift in Sources */,
+				502B0000000000000000000B /* MomentDetailView.swift in Sources */,
+				502B0000000000000000000C /* StatsView.swift in Sources */,
+				502B0000000000000000000D /* ProfileView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		50AD00000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		50AD00000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50AE00000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShiGuang/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shiguang.timeline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50AE00000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShiGuang/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shiguang.timeline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		507A00000000000000000001 /* Build configuration list for PBXNativeTarget "ShiGuang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50AE00000000000000000001 /* Debug */,
+				50AE00000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		507A00000000000000000002 /* Build configuration list for PBXProject "ShiGuang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50AD00000000000000000001 /* Debug */,
+				50AD00000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 500A00000000000000000001 /* Project object */;
+}
